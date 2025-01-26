@@ -48,7 +48,7 @@ export default function Uses() {
       <div className="space-y-20">
         <ToolsSection title="Workstation">
           <Tool title="Macbook Air M2 ">
-            This is my first MacBook, and I love it. I’ve been a Windows user for life, but I’m really enjoying the switch. For code it's just a game changer.
+            This is my first MacBook, and I love it. I’ve been a Windows user for life, but I’m really enjoying the switch. For code it&apos;s just a game changer.
           </Tool>
           <Tool title="Apple Pro Display XDR (Standard Glass)">
             The only display on the market if you want something HiDPI and
