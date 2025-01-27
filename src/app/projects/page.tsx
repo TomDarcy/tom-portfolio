@@ -7,44 +7,24 @@ import logoAnimaginary from '@/images/logos/animaginary.svg'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoFP from '@/images/logos/fp.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'FactoryPulse',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'Helping Manufacturers transform their operations with intuitive applications.',
+    link: { href: 'https://factorypulse.app', label: 'factorypulse.app' },
+    logo: logoFP,
   },
   {
-    name: 'Animaginary',
+    name: 'Jodie Lo Music',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'Supporting up and coming singer songwriter with a website, newsletter and blog to build her audience.',
+    link: { href: 'https://jodielo.co.uk', label: 'jodielo.co.uk' },
     logo: logoAnimaginary,
   },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
-  },
+  
 ]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -60,14 +40,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I’ve made on my journey so far.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Things I’ve made on my journey so far."
+      intro="I’ve worked on loads of projects over the years but having spent most of my career in industry these are hidden away. Now I've started to work on more public projects I thought I'd share them with you. I'm always looking for new projects to work on so if you have something in mind please get in touch."
     >
       <ul
         role="list"
