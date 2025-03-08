@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+
 import { Container } from '@/components/Container'
 import {
 
@@ -46,10 +47,19 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function PhoneIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+</svg>
+
+  )
+}
+
 export const metadata: Metadata = {
   title: 'About',
   description:
-    "I’m Tom d'Arcy, I believe digital manufacturing shouldn't be as hard as we make it, I founded FactoryPulse to help UK manufacturers transform.",
+    "I'm Tom d'Arcy, I believe digital manufacturing shouldn't be as hard as we make it, I founded FactoryPulse to help UK manufacturers transform.",
 }
 
 export default function About() {
@@ -68,20 +78,20 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Tom d&apos;Arcy, I build applications, websites and Industry 4.0 PoC&apos;s
+            I&apos;m Tom d&apos;Arcy, I build apps and websites
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and throughout my life I&apos;ve been obsessed with buidling. I&apos;ve been building digital solutions since 18 and have deployed applications that have been used by factories worldwide.
+              I&apos;ve loved making things for as long as I can remember, and throughout my life I&apos;ve been obsessed with building digital solutions. Since I was 18, I&apos;ve been developing and deploying applications that have made a real impact in businesses worldwide.
             </p>
             <p>
-              I have worked across a range of industries, from Aerospace, to Pharma and Semiconductors. All have one thing in common, they all struggle to adopt digital technology. I founded FactoryPulse to help UK manufacturers transform.
+              My experience spans across critical industries including Aerospace, Pharmaceuticals, and Semiconductors. What struck me most was a common challenge: the struggle to effectively adopt digital technology. This insight led me to found FactoryPulse, with a mission to help UK manufacturers successfully navigate their digital transformation journey.
             </p>
             <p>
-              This isn&apos;t just a job for me, it&apos;s a passion. I believe that digital manufacturing shouldn&apos;t be as hard as we make it. I&apos;m on a mission to make it easier for manufacturers to adopt digital technology and transform their businesses.
+              Beyond manufacturing, I&apos;m passionate about creating impactful digital solutions across all sectors. Whether it&apos;s crafting elegant websites or developing sophisticated mobile applications, I bring the same level of expertise and dedication to every project.
             </p>
             <p>
-              It is my belief that the future of manufacturing is digital, and I&apos;m excited to be a part of it. I&apos;m always looking for new opportunities to help manufacturers transform, so if you&apos;re interested in working together, please get in touch.
+              Based in Sussex, UK, I&apos;m always eager to collaborate on new projects that challenge the status quo. If you have a vision for your digital presence or need guidance on your technology strategy, let&apos;s connect and explore how we can work together.
             </p>
           </div>
         </div>
@@ -97,6 +107,10 @@ export default function About() {
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
               tom.darcy@factorypulse.app
+            </SocialLink>
+            <SocialLink href="tel:+447988118326" icon={PhoneIcon}               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+>
+              +44 798 811 8326
             </SocialLink>
           </ul>
         </div>

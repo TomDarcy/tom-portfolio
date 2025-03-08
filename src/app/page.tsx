@@ -16,11 +16,12 @@ import logoAC from '@/images/logos/AC.svg'
 import logoBCG from '@/images/logos/BCG.svg'
 import image1 from '@/images/photos/UF.webp'
 import image2 from '@/images/photos/code.jpg'
-import image3 from '@/images/photos/design.jpg'
-import image4 from '@/images/photos/gom.webp'
-import image5 from '@/images/photos/setup.jpg'
+import image5 from '@/images/photos/design.jpg'
+import image3 from '@/images/photos/fp_screenshot.png'
+import logoFactoryPulse from '@/images/logos/fp.svg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import image4 from '@/images/photos/jodie.png'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -186,6 +187,13 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
+      company: 'FactoryPulse',
+      title: 'Founder',
+      logo: logoFactoryPulse,
+      start: '2025',
+      end: 'Present',
+    },
+    {
       company: 'Boston Consulting Group',
       title: 'Consultant',
       logo: logoBCG,
@@ -244,7 +252,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ',
               rotations[imageIndex % rotations.length],
             )}
           >
