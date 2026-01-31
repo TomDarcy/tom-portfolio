@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colors - Industrial palette with warmth */
+  --color-charcoal-950: #09090c;
+  --color-charcoal-900: #0f0f14;
+  --color-charcoal-800: #1a1a24;
+  --color-charcoal-700: #252532;
+  --color-charcoal-600: #363647;
+  --color-charcoal-500: #4a4a5c;
+
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+
+  /* Font families */
+  --font-headline: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Custom animations */
+  --ease-mechanical: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-click: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode colors */
+:root {
+  --background: #fafafa;
+  --foreground: #0f0f14;
+  --card: #ffffff;
+  --card-foreground: #0f0f14;
+  --border: #e4e4e7;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f59e0b;
+  --accent-foreground: #0f0f14;
+}
+
+.dark {
+  --background: #0f0f14;
+  --foreground: #fafafa;
+  --card: #1a1a24;
+  --card-foreground: #fafafa;
+  --border: #252532;
+  --muted: #1a1a24;
+  --muted-foreground: #a1a1aa;
+  --accent: #f59e0b;
+  --accent-foreground: #0f0f14;
+}
+
+/* Grid overlay pattern */
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+
+/* Technical grid - more subtle */
+.technical-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+}
+
+/* Mechanical button click effect */
+.btn-mechanical {
+  transition: transform 0.1s var(--ease-click), box-shadow 0.1s var(--ease-click);
+}
+
+.btn-mechanical:active {
+  transform: scale(0.97) translateY(1px);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-amber-500);
+  color: var(--color-charcoal-900);
+}

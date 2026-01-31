@@ -1,22 +1,40 @@
-import { type Metadata } from 'next'
+import type { Metadata } from 'next'
+import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google'
+import { Providers } from './providers'
+import './globals.css'
 
-import { Providers } from '@/app/providers'
-import { Layout } from '@/components/Layout'
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-headline',
+  display: 'swap',
+})
 
-import '@/styles/tailwind.css'
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s -  Tom Darcy',
-    default:
-      'Tom Darcy - Software developer, founder, and Industry 4.0 expert',
+  title: 'Tom d\'Arcy | Operations Leader & Robotics Builder',
+  description: 'Operations leader turning bleeding-edge manufacturing technology into factories that actually run. Currently building robotic construction systems at AUAR.',
+  keywords: ['operations', 'manufacturing', 'robotics', 'Industry 4.0', 'automation', 'Rolls-Royce', 'AUAR'],
+  authors: [{ name: 'Tom d\'Arcy' }],
+  openGraph: {
+    title: 'Tom d\'Arcy | Operations Leader & Robotics Builder',
+    description: 'From prototype to scale. Taking manufacturing technology that works in the lab and making it run 24/7 across continents.',
+    type: 'website',
   },
-  description:
-    'I’m Tom, a software developer and entrepreneur based in Sussex. I’m the founder of FactoryPulse, where we develop applications that empower manufacturing businesses to transform their operations.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tom d\'Arcy | Operations Leader & Robotics Builder',
+    description: 'From prototype to scale. Taking manufacturing technology that works in the lab and making it run 24/7 across continents.',
   },
 }
 
@@ -26,12 +44,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="bg-[var(--background)] text-[var(--foreground)] antialiased">
         <Providers>
-          <div className="flex w-full">
-            <Layout>{children}</Layout>
-          </div>
+          {children}
         </Providers>
       </body>
     </html>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(git -C /Users/tomdarcy/code/TomDarcy/tom-portfolio log --oneline -20)",
+      "Bash(git -C /Users/tomdarcy/code/TomDarcy/tom-portfolio show 03ad653:src/app/page.tsx)",
+      "Bash(git -C /Users/tomdarcy/code/TomDarcy/tom-portfolio show 03ad653:package.json)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "Bash(lsof:*)"
+    ]
+  }
+}
