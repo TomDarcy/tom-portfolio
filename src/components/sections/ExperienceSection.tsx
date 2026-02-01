@@ -41,7 +41,7 @@ const experiences = [
       "Ran 24/7 R&D factory with full P&L accountability. Team of ~50 engineers and technicians. Directed assembly of the UltraFan—the world's largest jet engine.",
     logo: "/logos/rr.svg",
     featured: true,
-    image: "/photos/UF.jpg",
+    image: "/photos/uf.jpg",
   },
   {
     company: "Rolls-Royce",
