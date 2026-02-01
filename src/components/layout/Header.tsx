@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Container } from '@/components/ui/Container'
-import { ThemeToggle } from '@/components/shared/ThemeToggle'
-import { cn } from '@/lib/utils'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Container } from "@/components/ui/Container";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
-]
+  { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
+];
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal-950/60 backdrop-blur-md border-b border-white/10">
@@ -22,7 +22,7 @@ export function Header() {
           {/* Logo */}
           <a
             href="#hero"
-            className="font-headline text-xl font-bold text-white hover:text-amber-500 transition-colors"
+            className="font-headline text-xl font-bold text-white hover:text-amber-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"
           >
             TD
           </a>
@@ -33,9 +33,10 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-300 hover:text-amber-500 transition-colors"
+                className="relative text-sm font-medium text-gray-300 hover:text-amber-500 transition-colors group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <ThemeToggle />
@@ -82,7 +83,7 @@ export function Header() {
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
             className="md:hidden border-t border-white/10 bg-charcoal-950/95 backdrop-blur-md"
@@ -105,5 +106,5 @@ export function Header() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

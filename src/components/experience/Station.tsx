@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
-import { type ExperienceStation } from '@/lib/constants'
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { type ExperienceStation } from "@/lib/constants";
 
 interface StationProps {
-  station: ExperienceStation
-  index: number
+  station: ExperienceStation;
+  index: number;
 }
 
 export function Station({ station, index }: StationProps) {
@@ -15,7 +15,7 @@ export function Station({ station, index }: StationProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative"
     >
@@ -33,7 +33,7 @@ export function Station({ station, index }: StationProps) {
                 src={station.logo}
                 alt={station.company}
                 fill
-                className="object-contain p-1 dark:invert"
+                className="object-contain p-1"
               />
             </div>
           )}
@@ -78,13 +78,23 @@ export function Station({ station, index }: StationProps) {
               className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-amber-500 hover:text-amber-400 transition-colors"
             >
               {station.caseStudy.title}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </a>
           )}
         </CardContent>
       </Card>
     </motion.div>
-  )
+  );
 }

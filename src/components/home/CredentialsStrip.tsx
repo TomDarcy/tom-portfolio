@@ -1,14 +1,11 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Container } from '@/components/ui/Container'
-import { credentialsLogos } from '@/lib/constants'
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Container } from "@/components/ui/Container";
+import { credentialsLogos } from "@/lib/constants";
 
-const awards = [
-  'Manufacturer Top 100',
-  'Young Manufacturer of the Year',
-]
+const awards = ["Manufacturer Top 100", "Young Manufacturer of the Year"];
 
 export function CredentialsStrip() {
   return (
@@ -27,18 +24,22 @@ export function CredentialsStrip() {
               Built with
             </span>
             <div className="flex items-center gap-6">
-              {credentialsLogos.map((logo) => (
-                <div
+              {credentialsLogos.map((logo, index) => (
+                <motion.div
                   key={logo.name}
-                  className="relative h-8 w-16 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="relative h-8 w-16 opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110"
                 >
                   <Image
                     src={logo.src}
                     alt={logo.name}
                     fill
-                    className="object-contain dark:invert"
+                    className="object-contain"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -52,18 +53,25 @@ export function CredentialsStrip() {
               Recognised by
             </span>
             <div className="flex items-center gap-4">
-              {awards.map((award) => (
-                <span
+              {awards.map((award, index) => (
+                <motion.span
                   key={award}
-                  className="text-sm text-[var(--foreground)] font-medium"
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: credentialsLogos.length * 0.1 + index * 0.1,
+                  }}
+                  className="text-sm text-[var(--foreground)] font-medium hover:text-amber-500 transition-colors duration-300"
                 >
                   {award}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>
         </motion.div>
       </Container>
     </section>
-  )
+  );
 }
