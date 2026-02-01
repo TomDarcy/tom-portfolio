@@ -93,10 +93,7 @@ export function HeroBleed() {
         </div>
       </Container>
 
-      {/* Concept label for comparison */}
-      <div className="absolute top-4 right-4 z-20 px-3 py-1 bg-amber-500 text-charcoal-900 font-mono text-sm rounded">
-        Concept 2: The Bleed
-      </div>
+ 
 
       {/* Scroll indicator */}
       <motion.div

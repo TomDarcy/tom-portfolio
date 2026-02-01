@@ -29,12 +29,12 @@ export function AboutSection() {
             <p>
               I specialise in taking cutting-edge manufacturing technology from "it works in the lab"
               to "it's running 24/7 across 14 sites." That gap between prototype and production
-              is where most innovation dies—and where I do my best work.
+              is where most innovation dies, and that's where I do my best work.
             </p>
             <p>
-              My career started on the factory floor at Rolls-Royce, where I eventually led the team
+              My career started on the shop floor at Rolls-Royce, where I eventually led the team
               assembling the world's largest jet engine. I've since driven Industry 4.0 transformation
-              across 12 countries, optimised pharmaceutical supply chains at BCG, and now I'm building
+              across 12 countries, optimised pharmaceutical production lines at BCG, and now I'm building
               robotic construction systems at AUAR.
             </p>
             <p className="text-[var(--foreground)] font-medium">
