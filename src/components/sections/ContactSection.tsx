@@ -1,21 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/lib/constants";
 
 export function ContactSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "-100px" }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className="py-24 bg-[var(--background)]">
+    <section id="contact" className="py-24 bg-[var(--background)]" ref={sectionRef}>
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center"
-        >
+        <div className="animate-on-scroll max-w-2xl mx-auto text-center">
           <h2 className="font-headline text-3xl sm:text-4xl font-bold text-[var(--foreground)]">
             Let's talk
           </h2>
@@ -73,20 +87,17 @@ export function ContactSection() {
                 "Speaking opportunities",
                 "Robotics collaborations",
               ].map((item, index) => (
-                <motion.span
+                <span
                   key={item}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="px-4 py-2 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-full text-[var(--foreground)] hover:border-amber-500/50 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)] transition-all duration-300 cursor-default"
+                  className="animate-on-scroll px-4 py-2 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-full text-[var(--foreground)] hover:border-amber-500/50 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)] transition-all duration-300 cursor-default"
+                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                 >
                   {item}
-                </motion.span>
+                </span>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Container } from "@/components/ui/Container";
 
 const experiences = [
@@ -13,7 +13,7 @@ const experiences = [
       "Building robotic construction systems. Took next-gen product from design to test launch in under 3 months. Own deployment lifecycle across Europe and North America.",
     logo: "/logos/auar.svg",
     highlight: true,
-    image: "/photos/auar.png", // Robot setup / factory image
+    image: "/photos/auar.webp",
   },
   {
     company: "Boston Consulting Group",
@@ -22,7 +22,7 @@ const experiences = [
     description:
       "Led lean production system rollouts for pharma manufacturers. Delivered 10% reduction in lead times through digital tools and operational excellence.",
     logo: "/logos/BCG.svg",
-    image: "/photos/pharma.png", // Strategy/design aesthetic
+    image: "/photos/pharma.webp",
   },
   {
     company: "Edwards Vacuum",
@@ -31,7 +31,7 @@ const experiences = [
     description:
       "Directed Industry 4.0 rollout across 14 facilities in 12 countries. Led global team executing >£1M CapEx projects. Consolidated digital toolkit by 90%+ onto Azure.",
     logo: "/logos/AC.svg",
-    image: "/photos/semi.png", // Digital/I4.0 aesthetic
+    image: "/photos/semi.webp",
   },
   {
     company: "Rolls-Royce",
@@ -41,7 +41,7 @@ const experiences = [
       "Ran 24/7 R&D factory with full P&L accountability. Team of ~50 engineers and technicians. Directed assembly of the UltraFan—the world's largest jet engine.",
     logo: "/logos/rr.svg",
     featured: true,
-    image: "/photos/UF.jpg", // UltraFan engine
+    image: "/photos/UF.jpg",
   },
   {
     company: "Rolls-Royce",
@@ -50,20 +50,35 @@ const experiences = [
     description:
       "4.5-year accelerated development programme leading my first team at 20. Built the operational foundational skills that everything else sits on.",
     logo: "/logos/rr.svg",
-    image: "/photos/rr1.jpg", // Early career / factory floor
+    image: "/photos/rr1.webp",
   },
 ];
 
 export function ExperienceSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "-100px" }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="experience" className="py-24 bg-[var(--muted)]/30">
+    <section id="experience" className="py-24 bg-[var(--muted)]/30" ref={sectionRef}>
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="animate-on-scroll">
           <h2 className="font-headline text-3xl sm:text-4xl font-bold text-[var(--foreground)]">
             Where I've built things
           </h2>
@@ -71,21 +86,17 @@ export function ExperienceSection() {
             From apprentice to global operations—a decade of making
             manufacturing work.
           </p>
-        </motion.div>
+        </div>
 
         <div className="mt-16 space-y-12 lg:space-y-16">
           {experiences.map((exp, index) => {
             const isEven = index % 2 === 0;
-            const imageSide = isEven ? "left" : "right";
 
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
+                className="animate-on-scroll group"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
                   className={`
@@ -95,14 +106,7 @@ export function ExperienceSection() {
                 >
                   {/* Image - alternates sides */}
                   {exp.image && (
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        x: imageSide === "left" ? -40 : 40,
-                      }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 + 0.1 }}
+                    <div
                       className={`
                         relative aspect-[3/2] rounded-lg overflow-hidden
                         ${isEven ? "lg:order-1" : "lg:order-2"}
@@ -114,18 +118,16 @@ export function ExperienceSection() {
                         alt={`${exp.company} - ${exp.role}`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                       {/* Subtle duotone overlay */}
                       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-charcoal-950/20" />
-                    </motion.div>
+                    </div>
                   )}
 
                   {/* Card Content */}
-                  <motion.div
-                    initial={{ opacity: 0, x: imageSide === "left" ? 40 : -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                  <div
                     className={`
                       relative p-6 sm:p-8 rounded-2xl border transition-all duration-300
                       ${
@@ -158,6 +160,7 @@ export function ExperienceSection() {
                           width={32}
                           height={32}
                           className="object-contain"
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -201,9 +204,9 @@ export function ExperienceSection() {
                         </div>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

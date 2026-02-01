@@ -7,18 +7,23 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-headline',
   display: 'swap',
+  preload: true,
+  weight: ['700'], // Only load bold weight for headlines
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
+  preload: true,
 })
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
+  preload: false, // Don't preload mono font - it's less critical
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -49,6 +54,16 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* Preload hero image for better LCP */}
+        <link
+          rel="preload"
+          href="/Main.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body className="bg-[var(--background)] text-[var(--foreground)] antialiased">
         <Providers>
           {children}

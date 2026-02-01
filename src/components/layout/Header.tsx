@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
-import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "About", href: "#about" },
@@ -78,33 +76,29 @@ export function Header() {
         </nav>
       </Container>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-white/10 bg-charcoal-950/95 backdrop-blur-md"
-          >
-            <Container>
-              <div className="py-4 space-y-2">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block py-2 text-base font-medium text-gray-300 hover:text-amber-500 transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </Container>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile menu - CSS transition */}
+      <div
+        className={`
+          md:hidden border-t border-white/10 bg-charcoal-950/95 backdrop-blur-md
+          overflow-hidden transition-all duration-200 ease-out
+          ${mobileMenuOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <Container>
+          <div className="py-4 space-y-2">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 text-base font-medium text-gray-300 hover:text-amber-500 transition-colors"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </Container>
+      </div>
     </header>
   );
 }

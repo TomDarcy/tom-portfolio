@@ -2,7 +2,6 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 export function ThemeToggle() {
@@ -38,25 +37,20 @@ export function ThemeToggle() {
         <span>O</span>
       </span>
 
-      {/* Toggle knob */}
-      <motion.span
-        layout
-        transition={{
-          type: 'spring',
-          stiffness: 500,
-          damping: 30,
-        }}
+      {/* Toggle knob - CSS transition instead of framer-motion */}
+      <span
         className={cn(
           'relative z-10 block w-5 h-5 rounded-full',
           'bg-gradient-to-b shadow-md',
+          'transition-all duration-200 ease-out',
           isDark
-            ? 'bg-amber-500 from-amber-400 to-amber-600 ml-auto'
-            : 'bg-gray-200 from-gray-100 to-gray-300'
+            ? 'bg-amber-500 from-amber-400 to-amber-600 translate-x-6'
+            : 'bg-gray-200 from-gray-100 to-gray-300 translate-x-0'
         )}
       >
         {/* Knob texture */}
         <span className="absolute inset-1 rounded-full bg-gradient-to-b from-white/20 to-transparent" />
-      </motion.span>
+      </span>
     </button>
   )
 }

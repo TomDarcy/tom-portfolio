@@ -27,7 +27,7 @@ export function AboutHero() {
         >
           <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[var(--muted)] border border-[var(--border)]">
             <Image
-              src="/portrait.jpg"
+              src="/portrait.webp"
               alt="Tom d'Arcy"
               fill
               className="object-cover"
