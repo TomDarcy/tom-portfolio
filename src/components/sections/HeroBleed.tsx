@@ -20,13 +20,13 @@ export function HeroBleed() {
           src="/Main.webp"
           alt="Tom d'Arcy on the factory floor"
           fill
-          className="object-cover object-[60%_20%]"
+          className="object-cover object-[50%_20%] sm:object-[60%_20%]"
           priority
           quality={80}
           sizes="100vw"
         />
-        {/* Heavy gradient from RIGHT - reveals Tom on left */}
-        <div className="absolute inset-0 bg-gradient-to-l from-charcoal-950 via-charcoal-950/90 via-45% to-transparent" />
+        {/* Mobile: gradient from bottom for readability; Desktop: gradient from right to reveal Tom on left */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 via-50% to-charcoal-950/30 sm:bg-gradient-to-l sm:from-charcoal-950 sm:via-charcoal-950/90 sm:via-45% sm:to-transparent" />
         {/* Additional top/bottom vignette for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/40 via-transparent to-charcoal-950/60" />
       </div>
@@ -41,10 +41,10 @@ export function HeroBleed() {
 
       <Container
         size="full"
-        className="relative z-[3] flex w-screen justify-end items-end"
+        className="relative z-[3] flex justify-center items-end sm:justify-end sm:items-end"
       >
-        <div className="flex justify-end items-end w-full">
-          <div className="max-w-lg text-right pe-16">
+        <div className="flex justify-center items-end w-full sm:justify-end">
+          <div className="max-w-lg text-center sm:text-right px-4 sm:pe-16 sm:ps-0">
             {/* Stacked vertical layout for editorial feel */}
             <div className="animate-fade-in-up">
               {/* Small label */}
@@ -64,7 +64,7 @@ export function HeroBleed() {
             </p>
 
             {/* Currently Building Status */}
-            <div className="animate-fade-in-up delay-250 mt-6 flex items-center gap-2 justify-end">
+            <div className="animate-fade-in-up delay-250 mt-6 flex items-center gap-2 justify-center sm:justify-end">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
@@ -75,7 +75,7 @@ export function HeroBleed() {
             </div>
 
             {/* CTAs */}
-            <div className="animate-fade-in-up delay-500 mt-10 flex flex-wrap gap-4 justify-end">
+            <div className="animate-fade-in-up delay-500 mt-10 flex flex-wrap gap-4 justify-center sm:justify-end">
               <Button href="#experience" variant="primary" size="lg">
                 See my work
               </Button>
