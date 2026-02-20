@@ -43,53 +43,51 @@ export function HeroBleed() {
 
       <Container
         size="full"
-        className="relative z-[3] flex justify-center sm:justify-end"
+        className="relative z-[3]"
       >
-        <div className="flex justify-center w-full sm:justify-end">
-          <div className="max-w-lg text-center sm:text-right px-4 sm:px-0 sm:pe-16">
-            {/* Stacked vertical layout for editorial feel */}
-            <div className="animate-fade-in-up">
-              {/* Small label */}
-              <span className="inline-block font-mono text-sm text-amber-500 mb-4 tracking-wider">
-                OPERATIONS LEADER
-              </span>
+        <div className="max-w-lg mx-auto sm:mx-0 sm:ml-auto text-center sm:text-right sm:pe-16">
+          {/* Stacked vertical layout for editorial feel */}
+          <div className="animate-fade-in-up">
+            {/* Small label */}
+            <span className="inline-block font-mono text-sm text-amber-500 mb-4 tracking-wider">
+              OPERATIONS LEADER
+            </span>
 
-              <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05]">
-                Making things
-                <br />
-                that make things.
-              </h1>
-            </div>
+            <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05]">
+              Making things
+              <br />
+              that make things.
+            </h1>
+          </div>
 
-            <p className="animate-fade-in-up delay-150 mt-8 text-lg text-gray-300 leading-relaxed">
-              Taking manufacturing technology from prototype to scale.
-            </p>
+          <p className="animate-fade-in-up delay-150 mt-8 text-lg text-gray-300 leading-relaxed">
+            Taking manufacturing technology from prototype to scale.
+          </p>
 
-            {/* Currently Building Status */}
-            <div className="animate-fade-in-up delay-250 mt-6 flex items-center gap-2 justify-center sm:justify-end">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-              </span>
-              <span className="font-mono text-sm text-amber-500">
-                Currently: Building robots that build houses.
-              </span>
-            </div>
+          {/* Currently Building Status */}
+          <div className="animate-fade-in-up delay-250 mt-6 flex items-center gap-2 justify-center sm:justify-end">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+            </span>
+            <span className="font-mono text-sm text-amber-500">
+              Currently: Building robots that build houses.
+            </span>
+          </div>
 
-            {/* CTAs */}
-            <div className="animate-fade-in-up delay-500 mt-10 flex flex-wrap gap-4 justify-center sm:justify-end">
-              <Button href="#experience" variant="primary" size="lg">
-                See my work
-              </Button>
-              <Button
-                href="#contact"
-                variant="secondary"
-                size="lg"
-                className="border-white/30 text-white hover:border-amber-500"
-              >
-                Get in touch
-              </Button>
-            </div>
+          {/* CTAs */}
+          <div className="animate-fade-in-up delay-500 mt-10 flex flex-wrap gap-4 justify-center sm:justify-end">
+            <Button href="#experience" variant="primary" size="lg">
+              See my work
+            </Button>
+            <Button
+              href="#contact"
+              variant="secondary"
+              size="lg"
+              className="border-white/30 text-white hover:border-amber-500"
+            >
+              Get in touch
+            </Button>
           </div>
         </div>
       </Container>
