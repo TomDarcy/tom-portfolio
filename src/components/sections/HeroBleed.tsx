@@ -13,7 +13,7 @@ const ParticleBackground = dynamic(
 
 export function HeroBleed() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-20 sm:items-center sm:pb-0 overflow-hidden">
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -25,8 +25,10 @@ export function HeroBleed() {
           quality={80}
           sizes="100vw"
         />
-        {/* Mobile: gradient from bottom for readability; Desktop: gradient from right to reveal Tom on left */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 via-50% to-charcoal-950/30 sm:bg-gradient-to-l sm:from-charcoal-950 sm:via-charcoal-950/90 sm:via-45% sm:to-transparent" />
+        {/* Mobile: gradient from bottom for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 via-50% to-charcoal-950/30 sm:hidden" />
+        {/* Desktop: gradient from right to reveal Tom on left */}
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-l from-charcoal-950 via-charcoal-950/90 via-45% to-transparent" />
         {/* Additional top/bottom vignette for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/40 via-transparent to-charcoal-950/60" />
       </div>
@@ -41,10 +43,10 @@ export function HeroBleed() {
 
       <Container
         size="full"
-        className="relative z-[3] flex justify-center items-end sm:justify-end sm:items-end"
+        className="relative z-[3] flex justify-center sm:justify-end"
       >
-        <div className="flex justify-center items-end w-full sm:justify-end">
-          <div className="max-w-lg text-center sm:text-right px-4 sm:pe-16 sm:ps-0">
+        <div className="flex justify-center w-full sm:justify-end">
+          <div className="max-w-lg text-center sm:text-right px-4 sm:px-0 sm:pe-16">
             {/* Stacked vertical layout for editorial feel */}
             <div className="animate-fade-in-up">
               {/* Small label */}
