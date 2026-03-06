@@ -14,13 +14,13 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal-950/60 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]">
       <Container>
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
             href="#hero"
-            className="font-headline text-xl font-bold text-white hover:text-amber-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"
+            className="font-headline text-xl font-bold text-[var(--foreground)] hover:text-amber-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"
           >
             TD
           </a>
@@ -31,7 +31,7 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="relative text-sm font-medium text-gray-300 hover:text-amber-500 transition-colors group"
+                className="relative text-sm font-medium text-[var(--muted-foreground)] hover:text-amber-500 transition-colors group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full" />
@@ -46,7 +46,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-white hover:text-amber-500 transition-colors"
+              className="p-2 text-[var(--foreground)] hover:text-amber-500 transition-colors"
               aria-label="Toggle menu"
             >
               <svg
@@ -79,7 +79,7 @@ export function Header() {
       {/* Mobile menu - CSS transition */}
       <div
         className={`
-          md:hidden border-t border-white/10 bg-charcoal-950/95 backdrop-blur-md
+          md:hidden border-t border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-md
           overflow-hidden transition-all duration-200 ease-out
           ${mobileMenuOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}
         `}
@@ -91,7 +91,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-base font-medium text-gray-300 hover:text-amber-500 transition-colors"
+                className="block py-2 text-base font-medium text-[var(--muted-foreground)] hover:text-amber-500 transition-colors"
               >
                 {item.name}
               </a>
