@@ -37,12 +37,6 @@ export default function ThinkingPage() {
                   <p className="mt-2 text-[var(--muted-foreground)] leading-relaxed">
                     {essay.description}
                   </p>
-                  <span className="mt-2 block font-mono text-sm text-[var(--muted-foreground)]">
-                    {new Date(essay.date).toLocaleDateString('en-GB', {
-                      year: 'numeric',
-                      month: 'long',
-                    })}
-                  </span>
                 </Link>
               </article>
             ))}

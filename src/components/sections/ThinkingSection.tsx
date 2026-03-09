@@ -59,12 +59,6 @@ export function ThinkingSection({ essays }: { essays: EssayMeta[] }) {
                   <p className="mt-1 text-[var(--muted-foreground)]">
                     {essay.description}
                   </p>
-                  <span className="mt-1 block font-mono text-sm text-[var(--muted-foreground)]">
-                    {new Date(essay.date).toLocaleDateString('en-GB', {
-                      year: 'numeric',
-                      month: 'long',
-                    })}
-                  </span>
                 </Link>
               </article>
             ))}

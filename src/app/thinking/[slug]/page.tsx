@@ -53,13 +53,6 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
               <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight">
                 {essay.title}
               </h1>
-              <span className="mt-4 block font-mono text-sm text-[var(--muted-foreground)]">
-                {new Date(essay.date).toLocaleDateString('en-GB', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </span>
             </header>
 
             <div className="prose-custom">
