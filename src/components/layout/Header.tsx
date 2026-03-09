@@ -5,10 +5,10 @@ import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 const navigation = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Thinking", href: "#thinking" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Thinking", href: "/#thinking" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -20,7 +20,7 @@ export function Header() {
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
-            href="#hero"
+            href="/"
             className="font-headline text-xl font-bold text-[var(--foreground)] hover:text-amber-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]"
           >
             TD
