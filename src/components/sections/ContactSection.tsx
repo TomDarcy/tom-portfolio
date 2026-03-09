@@ -34,8 +34,7 @@ export function ContactSection() {
             Let's talk
           </h2>
           <p className="mt-4 text-lg text-[var(--muted-foreground)]">
-            I'm always interested in discussing manufacturing innovation,
-            robotics, or connecting with fellow builders.
+            Always happy to talk manufacturing, robotics, or interesting problems.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -77,26 +76,6 @@ export function ContactSection() {
             </Button>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-[var(--border)]">
-            <p className="text-sm text-[var(--muted-foreground)] mb-4">
-              Open to:
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Advisory roles",
-                "Speaking opportunities",
-                "Robotics collaborations",
-              ].map((item, index) => (
-                <span
-                  key={item}
-                  className="animate-on-scroll px-4 py-2 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-full text-[var(--foreground)] hover:border-amber-500/50 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)] transition-all duration-300 cursor-default"
-                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </Container>
     </section>

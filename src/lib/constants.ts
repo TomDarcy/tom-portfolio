@@ -26,11 +26,11 @@ export const heroContent = {
 
 export const aboutContent = {
   headline: 'Taking manufacturing tech from pilot to scale',
-  narrative: `I'm an operations leader who specialises in the messy middle—taking cutting-edge manufacturing technology from "it works in the lab" to "it's running 24/7 across 14 sites."
+  narrative: `I write Python and I run factories. I can debug machine code and present to a board. That bridge between the technical and the operational is where I do my best work.
 
-My career started on the factory floor at Rolls-Royce, where I eventually led the team assembling the world's largest jet engine. I've since driven Industry 4.0 transformation across 12 countries, optimised pharmaceutical supply chains at BCG, and now I'm building robotic manufacturing systems at AUAR that are changing how we construct buildings.
+My career started on the shop floor at Rolls-Royce, where I eventually led the team assembling the world's largest jet engine. I've since driven Industry 4.0 transformation across 12 countries, optimised pharmaceutical production lines at BCG, and now I'm building robotic construction systems at AUAR.
 
-What makes me different: I write Python and I run P&Ls. I can debug a PLC and present to a board. That bridge between the technical and the commercial is where I do my best work.
+The gap between "it works in the lab" and "it's running 24/7 across 14 sites" is where most innovation dies — and it's where I've spent my entire career.
 
 When I'm not on a factory floor, I'm probably in my workshop—woodworking, welding, or building something that didn't exist yesterday.`,
   quickFacts: [
@@ -170,10 +170,5 @@ export const credentialsLogos = [
 
 export const contactContent = {
   headline: 'Let\'s talk',
-  description: 'I\'m always interested in discussing new opportunities, collaborations, or just connecting with fellow builders.',
-  openTo: [
-    'Advisory roles in manufacturing tech',
-    'Speaking opportunities',
-    'Collaboration on robotics & automation projects',
-  ],
+  description: 'Always happy to talk manufacturing, robotics, or interesting problems.',
 }

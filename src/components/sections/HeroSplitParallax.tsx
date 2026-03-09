@@ -120,9 +120,9 @@ export function HeroSplitParallax() {
             <span className="text-amber-500">.</span>
           </h1>
 
-          {/* Subtitle */}
+          {/* Positioning line */}
           <p className="animate-fade-in-up delay-300 mt-6 text-lg text-[var(--muted-foreground)] max-w-md leading-relaxed">
-            Taking manufacturing technology from prototype to scale.
+            Head of Robotics at AUAR. Previously Rolls-Royce, Edwards Vacuum, BCG.
           </p>
 
           {/* Status indicator */}
