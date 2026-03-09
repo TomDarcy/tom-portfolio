@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 const navigation = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "Thinking", href: "#thinking" },
   { name: "Contact", href: "#contact" },
 ];
 
