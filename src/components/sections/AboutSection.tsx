@@ -41,10 +41,9 @@ export function AboutSection() {
             </h2>
 
             <div className="mt-8 space-y-6 text-lg text-[var(--muted-foreground)] leading-relaxed">
-              <p>
-                I specialise in taking cutting-edge manufacturing technology from "it works in the lab"
-                to "it's running 24/7 across 14 sites." That gap between prototype and production
-                is where most innovation dies, and that's where I do my best work.
+              <p className="text-[var(--foreground)] font-medium">
+                I write Python and I run factories. I can debug machine code and present
+                to a board. That bridge between the technical and the operational is where I do my best work.
               </p>
               <p>
                 My career started on the shop floor at Rolls-Royce, where I eventually led the team
@@ -52,9 +51,9 @@ export function AboutSection() {
                 across 12 countries, optimised pharmaceutical production lines at BCG, and now I'm building
                 robotic construction systems at AUAR.
               </p>
-              <p className="text-[var(--foreground)] font-medium">
-                What makes me different: I write Python and I run factories. I can debug machine code and present
-                to a board. That bridge between the technical and the operational is my sweet spot.
+              <p>
+                The gap between "it works in the lab" and "it's running 24/7 across 14 sites" is where
+                most innovation dies — and it's where I've spent my entire career.
               </p>
             </div>
           </div>

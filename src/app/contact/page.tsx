@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import { siteConfig, contactContent } from '@/lib/constants'
 
 export default function ContactPage() {
@@ -48,30 +47,6 @@ export default function ContactPage() {
             </Button>
           </motion.div>
 
-          {/* What I'm open to */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-16"
-          >
-            <Card>
-              <h2 className="font-headline text-lg font-semibold text-[var(--foreground)] mb-4">
-                What I'm open to
-              </h2>
-              <ul className="space-y-3">
-                {contactContent.openTo.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-3 text-[var(--muted-foreground)]"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </motion.div>
 
           {/* Alternative contact */}
           <motion.div
