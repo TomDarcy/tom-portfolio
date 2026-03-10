@@ -41,20 +41,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark mode colors */
+/* Dark mode only */
 :root {
-  --background: #fafafa;
-  --foreground: #0f0f14;
-  --card: #ffffff;
-  --card-foreground: #0f0f14;
-  --border: #e4e4e7;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f59e0b;
-  --accent-foreground: #0f0f14;
-}
-
-.dark {
   --background: #0f0f14;
   --foreground: #fafafa;
   --card: #1a1a24;

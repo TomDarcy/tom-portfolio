@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 const navigation = [
   { name: "About", href: "/#about" },
@@ -38,12 +37,10 @@ export function Header() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

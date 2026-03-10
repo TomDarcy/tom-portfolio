@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google'
-import { Providers } from './providers'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -51,7 +50,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
@@ -65,9 +63,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[var(--background)] text-[var(--foreground)] antialiased">
-        <Providers>
-          {children}
-        </Providers>
+        {children}
       </body>
     </html>
   )
