@@ -43,7 +43,7 @@ export function AboutHero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="lg:col-span-2"
         >
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="prose prose-lg prose-invert max-w-none">
             {aboutContent.narrative.split('\n\n').map((paragraph, index) => (
               <p
                 key={index}

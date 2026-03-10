@@ -153,7 +153,7 @@ export function ExperienceSection() {
 
                     {/* Logo */}
                     <div className="mb-4">
-                      <div className="inline-flex shrink-0 w-12 h-12 rounded-xl bg-white dark:bg-[var(--muted)] border border-[var(--border)] p-2 items-center justify-center">
+                      <div className="inline-flex shrink-0 w-12 h-12 rounded-xl bg-[var(--muted)] border border-[var(--border)] p-2 items-center justify-center">
                         <Image
                           src={exp.logo}
                           alt={exp.company}
