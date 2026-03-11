@@ -4,7 +4,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Container } from '@/components/ui/Container'
+import { ShareButton } from '@/components/ui/ShareButton'
 import { getAllEssays, getEssayBySlug } from '@/lib/mdx'
+import { siteConfig } from '@/lib/constants'
 
 export function generateStaticParams() {
   const essays = getAllEssays()
@@ -57,6 +59,13 @@ export default async function EssayPage({ params }: { params: Promise<{ slug: st
 
             <div className="prose-custom">
               <MDXRemote source={essay.content} />
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-[var(--border)]">
+              <ShareButton
+                url={`${siteConfig.url}/thinking/${slug}`}
+                title={essay.title}
+              />
             </div>
           </article>
         </Container>

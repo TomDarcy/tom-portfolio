@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Tom d\'Arcy',
-  title: 'Operations Leader & Robotics Builder',
+  title: 'Head of Robotics & Deployments',
   description: 'From prototype to scale. Taking manufacturing technology that works in the lab and making it run 24/7 across continents.',
   url: 'https://tomdarcy.github.io/tom-portfolio',
   links: {

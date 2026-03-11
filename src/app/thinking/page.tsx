@@ -21,7 +21,7 @@ export default function ThinkingPage() {
             Thinking
           </h1>
           <p className="mt-4 text-lg text-[var(--muted-foreground)]">
-            Essays on manufacturing, robotics, and the messy middle.
+            How manufacturing actually changes — from someone building on the shop floor.
           </p>
 
           <div className="mt-12 space-y-10">
