@@ -50,7 +50,7 @@ const experiences = [
     description:
       "4.5-year accelerated development programme leading my first team at 20. Built the operational foundational skills that everything else sits on.",
     logo: "/logos/rr.svg",
-    image: "/photos/rr1.webp",
+    image: "/photos/spitfire.webp",
   },
 ];
 
