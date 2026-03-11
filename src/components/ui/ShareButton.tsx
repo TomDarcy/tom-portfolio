@@ -13,13 +13,13 @@ export function ShareButton({ url, title }: ShareButtonProps) {
       href={linkedInUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 font-mono text-sm text-[var(--muted-foreground)] hover:text-amber-500 transition-colors"
+      className="inline-flex items-center gap-2 rounded-md border border-[var(--border)] px-4 py-2 font-mono text-sm text-[var(--foreground)] hover:border-amber-500 hover:text-amber-500 transition-colors"
       aria-label={`Share "${title}" on LinkedIn`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"
