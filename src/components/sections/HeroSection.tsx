@@ -42,7 +42,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-xl"
           >
-            Operations leader taking manufacturing technology from prototype to scale.
+            Head of Robotics & Deployments taking manufacturing technology from prototype to scale.
             Currently building robotic construction systems at AUAR.
           </motion.p>
 

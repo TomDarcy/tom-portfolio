@@ -12,7 +12,7 @@ export const siteConfig = {
 
 export const heroContent = {
   headline: 'I make robots work for a living.',
-  subheadline: 'Operations leader turning manufacturing technology into factories that actually run.',
+  subheadline: 'Head of Robotics & Deployments turning manufacturing technology into factories that actually run.',
   stats: [
     { value: '14', label: 'sites' },
     { value: '12', label: 'countries' },
