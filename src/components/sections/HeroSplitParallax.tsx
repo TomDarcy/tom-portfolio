@@ -122,7 +122,7 @@ export function HeroSplitParallax() {
 
           {/* Positioning line */}
           <p className="animate-fade-in-up delay-300 mt-6 text-lg text-[var(--muted-foreground)] max-w-md leading-relaxed">
-            Head of Robotics at AUAR. Previously Rolls-Royce, Edwards Vacuum, BCG.
+            Head of Robotics & Deployments at AUAR. Previously Rolls-Royce, Edwards Vacuum, BCG.
           </p>
 
           {/* Status indicator */}
