@@ -41,6 +41,37 @@ export default function ThinkingPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-16 pt-8 border-t border-[var(--border)]">
+            <form
+              action="https://buttondown.com/api/emails/embed-subscribe/darcy"
+              method="post"
+              className="embeddable-buttondown-form flex flex-col gap-3 max-w-md"
+            >
+              <label htmlFor="bd-email" className="font-mono text-sm text-[var(--muted-foreground)]">
+                Enter your email
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  name="email"
+                  id="bd-email"
+                  className="flex-1 rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  placeholder="you@example.com"
+                />
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  className="rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-black cursor-pointer hover:bg-amber-400 transition-colors"
+                />
+              </div>
+              <p className="text-xs text-[var(--muted-foreground)]">
+                <a href="https://buttondown.com/refer/darcy" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">
+                  Powered by Buttondown.
+                </a>
+              </p>
+            </form>
+          </div>
         </Container>
       </main>
       <Footer />
