@@ -40,6 +40,9 @@ export function ThinkingSection({ essays }: { essays: EssayMeta[] }) {
             <h2 className="font-headline text-3xl sm:text-4xl font-bold text-[var(--foreground)]">
               Thinking
             </h2>
+            <p className="mt-4 text-lg text-[var(--muted-foreground)]">
+              How manufacturing actually changes. From someone building on the shop floor.
+            </p>
           </div>
 
           <div className="mt-10 space-y-8">
